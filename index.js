@@ -13,19 +13,18 @@ var api = new createsend(auth);
 var listId = '418a0ee16a6d70e132cd99f7f509db74' // The ID of the list
 
 app.get("/", (req, res) => {
+    let query = JSON.parse(Buffer.from(req.query.query, 'base64').toString());
     var user = {
-        EmailAddress: req.query.email,
+        EmailAddress: query.email,
         CustomFields: [
-            { Key: req.query.campaign, Value: '1' }
+            { Key: query.campaign, Value: '1' }
         ]
     };
     api.subscribers.updateSubscriber(listId, user.EmailAddress, user, (err, response) => {
         if (err) {
             res.send('err')
         } else {
-            console.log(JSON.stringify(req.query));
-
-            res.redirect(req.query.destiny)
+            res.redirect(query.destiny)
         }
     });
 })
