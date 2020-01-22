@@ -13,7 +13,7 @@ var api = new createsend(auth);
 var listId = '418a0ee16a6d70e132cd99f7f509db74' // The ID of the list
 
 app.get("/", (req, res) => {
-    let query = JSON.parse(Buffer.from(req.query.query, 'base64').toString());
+    // let query = JSON.parse(Buffer.from(req.query.query, 'base64').toString());
     var user = {
         EmailAddress: query.email,
         CustomFields: [
@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
         }
     });
 })
+
 
 
 app.listen(port, () => {
