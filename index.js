@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000;
 
 var auth = { apiKey: 'idoUWtsrU/zgeegoO4GA5BGqfK+EViSYpKVqfUkI8hv1/H//0qDUZOjEQGwQUna2Qjfvxaan9rqDltN6JHLZ2UMVNJliw5vjfK70nJp+COTv92uVB9v6qDYJ5/uSi0lm6IWGtk/wdz/0AWqE+lvN5A==' };
 var api = new createsend(auth);
-var listId = '7f101d5c8761891d851e826c52b27e06' // The ID of the list
+var listId = 'fdd0a2c4f247fac31a3a1ecbdf713d67' // The ID of the list
 
 app.get("/", (req, res) => {
     // let query = JSON.parse(Buffer.from(req.query.query, 'base64').toString());
